@@ -3,7 +3,14 @@
 
 
 p{
-text-align: center;
+    
+text-align: center; 
 font-style: italic;
-margin: 300;
+margin: 100px;
+background-color: blanchedalmond;
+color: cadetblue;
+padding: 40px;
+border-style: dotted;
 }
+
+
