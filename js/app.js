@@ -1,5 +1,7 @@
 'use strict';
 let count = 0;
+let musics = ['clasic','jazz','rock&roll'];
+let hints =['Using Piano','Using Clarinet','Using Guitar','it uses instruments','it has a bass'] ;
 let result = confirm(" Please Answer These Yes or No Questions ");
 if(result){
     alert("You can Answer it y/n or yes/no");
@@ -59,9 +61,60 @@ if(result){
     }
    let name = prompt("Tel us What is Your Name");
 
-   alert("Thank You " + " " +name + " " + "For Taking the Quiz you answered  " + " " + count + " " + " Correct Questions" )
+
+   
+ let LuckyNumber = 7;
+ 
+ for (let i = 0 ;i<=3;i++)
+ {
+     let q6 = parseInt(prompt("Guess My Lucky Number?"));
+     if(q6==LuckyNumber)
+     {
+         alert("you  guessed yay good for you."); 
+               count++;
+         break;
+         
+     }
+     else if (q6<LuckyNumber)
+     {
+        alert("TOO Low"); 
+      
+     }
+     else{
+        alert("TOO High"); 
+     }
+
+     
+     if(i==3)
+     alert("my lucky Number is "+LuckyNumber+ "\n "+ "Why didn't guessed"); 
  }
- else {
+ 
+      
+    for(let i = 0 ; i<=4 ;i++){
+        let music = prompt("Guess My favforaiteb musics")
+       if(music==musics[0]||music==musics[1]||music==musics[2]){
+           alert("correct,How do you know")
+           count++;
+           break;
+    }else if (music!==musics[0]||music!==musics[1]||music!==musics[2]){
+       
+        alert("There some hints "+hints[i]);
+    }
+
+    if(i==4)
+    alert("My Favorite Musics is "+musics[0]+", "+musics[1]+", "+musics[2]+ "\n "+ "Why didn't guessed"); 
+    }
+
+   alert("Thank You " + " " + name + " " + "For Taking the Quiz you answered  " + " " + count + " " + " Correct Questions" );
+ 
+
+
+
+
+}
+ 
+
+  else {
      alert("You Cannot Take The Quiz")
  }
 

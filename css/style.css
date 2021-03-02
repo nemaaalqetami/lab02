@@ -2,9 +2,8 @@
 
 
 
-p{
-    
-text-align: center; 
+ul{
+ 
 font-style: italic;
 margin: 100px;
 background-color: blanchedalmond;
@@ -12,5 +11,17 @@ color: cadetblue;
 padding: 40px;
 border-style: dotted;
 }
+#list{
+background-color: rgb(167, 216, 245);
+ font-style: italic;
+padding: 30px;
+margin: 80px;
 
+border-style: groove;
+}
 
+h2{
+    color: cadetblue;
+    text-align: center;
+    font-style: oblique;
+}
