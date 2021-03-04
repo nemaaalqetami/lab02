@@ -1,68 +1,79 @@
 'use strict';
+let arrAnswer = [];
 let count = 0;
 let musics = ['clasic','jazz','rock&roll'];
 let hints =['Using Piano','Using Clarinet','Using Guitar','it uses instruments','it has a bass'] ;
+let Name = prompt("Tel us What is Your Name");
+alert("hello "+Name+" lets start the guessing game");
 let result = confirm(" Please Answer These Yes or No Questions ");
-if(result){
-    alert("You can Answer it y/n or yes/no");
-    let q1 = prompt("Are The Human blood is originally blue in color but becomes red when combined with oxygen ?");
-    if(q1.toLowerCase()=='no'||q1.toLowerCase()=='n'){
-        alert("Your Answer is correct");
-        count++;
-        console.log(q1);
-    }else if (q1.toLowerCase()=='yes'|| q1.toLowerCase()=='y')
-    {
-        alert("Your Answer is incorrect");
-        console.log(q1);
-    }
-    let q2 = prompt("Dose Octopus has two hearts ?");
-    if(q2.toLowerCase()=='no'||q2.toLowerCase()=='n'){
-        alert("Your Answer is correct");
-        count++;
-        console.log(q2);
-    }else if (q2.toLowerCase()=='yes'|| q2.toLowerCase()=='y')
-    {
-        alert("Your Answer is incorrect, octopus has three hearts");
-        console.log(q2);
-    }
-   
-    let q3 = prompt("Are The sky rains jewels in Jupiter ?");
 
-    if(q3.toLowerCase()=='no'||q3.toLowerCase()=='n'){
-        alert("Your Answer is incorrect");
-        console.log(q3);
-    }else if (q3.toLowerCase()=='yes'|| q3.toLowerCase()=='y')
-    {
-        alert("Your Answer is correct, our solar system is exceptional");
-        count++;
-        console.log(q3);
+function checkAnswer (qvalue,cAnswer1,showUser){
+    let answer;
+    let cAnswer2;
+    let incAnswer1;
+    let incAnswer2;
+
+    if (cAnswer1 == 'yes'){
+        cAnswer2 = 'y';
+        incAnswer1 = 'no';
+        incAnswer2 = 'n';
+    }else{
+        cAnswer2 = 'n';
+        incAnswer1 = 'yes';
+        incAnswer2 = 'y';
     }
-  
-    let q4 = prompt("Is One teaspoon of honey is the amount that 12 bees can produce throughout their lives ?");
-    if(q4.toLowerCase()=='no'||q4.toLowerCase()=='n'){
-        alert("Your Answer is incorrect");
-        console.log(q4);
-    }else if (q4.toLowerCase()=='yes'|| q4.toLowerCase()=='y')
-    {
-        alert("Your Answer is correct , imagine the number of bees that participated in the production of one honey box");
-        count++;
-        console.log(q4);
+    let i = 0;
+    while (i == 0){
+        if (qvalue.toLowerCase() == cAnswer1 || qvalue.toLowerCase() == cAnswer2){
+            alert("your answer is correct");
+            console.log("your answer is correct");
+           answer = 'yes';
+            i = 1;
+           
+        }else if (qvalue.toLowerCase() == incAnswer1 || qvalue.toLowerCase() == incAnswer2){
+            alert("your answer is incorrect the correct answer is " + showUser );
+            console.log(" your answer is incorrect"); 
+             answer = 'no';
+             i = 1;  
+                  
+        }else {
+          q1Name=prompt('please just answer with \n yes(Y) or no(N)');
+        }
     }
+   return  answer;           
+}
+
     
-    let q5 = prompt("You cannot breathe through your nose while you are speaking ?");
-    if(q5.toLowerCase()=='no'||q5.toLowerCase()=='n'){
-        alert("Your Answer is incorrect");
-        console.log(q5);
-    }else if (q5.toLowerCase()=='yes'|| q5.toLowerCase()=='y')
-    {
-        alert("Your Answer is correct");
-        count++;
-        console.log(q5);
-    }
-   let name = prompt("Tel us What is Your Name");
 
+
+if(result){
+    let q1 = prompt("Are The Human blood is originally blue in color but becomes red when combined with oxygen ?");
+    arrAnswer.push(checkAnswer(q1,'no','no'));
+    
+    let q2 = prompt("Dose Octopus has two hearts ?");
+    arrAnswer.push(checkAnswer(q2,'no','3 hearts'));
+
+
+    let q3 = prompt("Are The sky rains jewels in Jupiter ?");
+    arrAnswer.push(checkAnswer(q3,'yes','the sky rains jewels in Jupiter'));
+
+    
+    let q4 = prompt("Is One teaspoon of honey is the amount that 12 bees can produce throughout their lives ?");
+    arrAnswer.push(checkAnswer(q4,'yes','imagine the number of bees that participated in the production of one honey box'));
+    
+    let q5 = prompt("You cannot breath through your nose while you are speaking ?");
+    arrAnswer.push(checkAnswer(q5,'yes','yes'));
 
    
+    for (let i = 0;i < arrAnswer.length;i++){
+        if (arrAnswer[i] == 'yes'){
+            count++;
+        }
+    }
+
+
+
+
  let LuckyNumber = 7;
  
  for (let i = 0 ;i<=3;i++)
@@ -105,7 +116,7 @@ if(result){
     alert("My Favorite Musics is "+musics[0]+", "+musics[1]+", "+musics[2]+ "\n "+ "Why didn't guessed"); 
     }
 
-   alert("Thank You " + " " + name + " " + "For Taking the Quiz you answered  " + " " + count + " " + " Correct Questions" );
+   alert("Thank You " + " " + Name + " " + "For Taking the Quiz you answered  " + " " + count + " " + " Correct Questions" );
  
 
 
